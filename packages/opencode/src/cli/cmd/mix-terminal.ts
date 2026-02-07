@@ -1,6 +1,10 @@
 import { cmd } from "./cmd"
 import * as prompts from "@clack/prompts"
 import { UI } from "../ui"
+import { AutomatedScripts } from "../../mix-terminal/scripts/automated"
+
+// Script execution delay in milliseconds
+const SCRIPT_EXECUTION_DELAY = 1000
 
 export const MixTerminalCommand = cmd({
   command: "mix-terminal",
@@ -105,10 +109,21 @@ export const MixTerminalScriptCommand = cmd({
           const spinner = prompts.spinner()
           spinner.start("Executing automated script...")
 
-          // Simulate script execution
-          await new Promise((resolve) => setTimeout(resolve, 1000))
+          try {
+            const result = await AutomatedScripts.executeScript(args.name as string)
+            
+            if (result.success) {
+              spinner.stop("Script executed successfully")
+              prompts.log.success(result.output)
+            } else {
+              spinner.stop("Script execution failed")
+              prompts.log.error(result.error || "Unknown error")
+            }
+          } catch (error) {
+            spinner.stop("Script execution failed")
+            prompts.log.error(error instanceof Error ? error.message : "Unknown error")
+          }
 
-          spinner.stop("Script executed successfully")
           prompts.outro("Script complete")
         },
       })

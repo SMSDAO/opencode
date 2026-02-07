@@ -55,12 +55,14 @@ export namespace SolanaRemix {
 
   /**
    * Get wallet information
+   * Note: Returns mock data - integrate with actual Solana wallet SDK for production use
    */
   export async function getWallet(): Promise<Response> {
     return {
       success: true,
       data: {
-        address: "Example_Wallet_Address",
+        // Mock Solana address format (base58-encoded 32-byte public key)
+        address: "11111111111111111111111111111111",
         balance: 0,
       },
     }
@@ -68,6 +70,7 @@ export namespace SolanaRemix {
 
   /**
    * Deploy Solana program
+   * Note: Returns mock data - integrate with actual Solana CLI/SDK for production use
    */
   export async function deployProgram(programPath: string): Promise<Response> {
     console.log("[SolanaRemix] Deploying program:", programPath)
@@ -76,7 +79,8 @@ export namespace SolanaRemix {
       success: true,
       data: {
         deployed: true,
-        programId: "Example_Program_ID",
+        // Mock Solana program ID format (base58-encoded public key)
+        programId: "BPFLoaderUpgradeab1e11111111111111111111111",
       },
     }
   }
