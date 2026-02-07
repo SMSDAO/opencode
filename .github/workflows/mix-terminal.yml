@@ -1,0 +1,84 @@
+name: MIX Terminal Automation
+
+on:
+  workflow_dispatch:
+    inputs:
+      script:
+        description: 'Script to run'
+        required: true
+        type: choice
+        options:
+          - smartbrain-init
+          - solana-setup
+          - terminal-config
+          - full-integration
+      environment:
+        description: 'Environment'
+        required: false
+        default: 'development'
+        type: choice
+        options:
+          - development
+          - staging
+          - production
+
+  push:
+    branches:
+      - main
+      - dev
+    paths:
+      - 'packages/opencode/src/mix-terminal/**'
+      - '.github/workflows/mix-terminal.yml'
+
+jobs:
+  run-mix-terminal:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run MIX Terminal Script
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          echo "Running MIX Terminal with script: ${{ github.event.inputs.script }}"
+          echo "Environment: ${{ github.event.inputs.environment }}"
+          bun run --cwd packages/opencode dev mix-terminal script run ${{ github.event.inputs.script }}
+
+      - name: Automated Integration Test
+        if: github.event_name == 'push'
+        run: |
+          echo "Running automated MIX Terminal integration tests"
+          # Add integration tests here
+
+      - name: SmartBrain Health Check
+        run: |
+          echo "Checking SmartBrain component health"
+          # Add health check logic
+
+      - name: SolanaRemix Health Check
+        run: |
+          echo "Checking SolanaRemix component health"
+          # Add health check logic
+
+      - name: Terminal Health Check
+        run: |
+          echo "Checking Terminal component health"
+          # Add health check logic
+
+      - name: Report Status
+        if: always()
+        run: |
+          echo "MIX Terminal automation workflow completed"
+          echo "Status: ${{ job.status }}"
