@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       script:
-        description: 'Script to run'
+        description: "Script to run"
         required: true
         type: choice
         options:
@@ -13,9 +13,9 @@ on:
           - terminal-config
           - full-integration
       environment:
-        description: 'Environment'
+        description: "Environment"
         required: false
-        default: 'development'
+        default: "development"
         type: choice
         options:
           - development
@@ -27,8 +27,8 @@ on:
       - main
       - dev
     paths:
-      - 'packages/opencode/src/mix-terminal/**'
-      - '.github/workflows/mix-terminal.yml'
+      - "packages/opencode/src/mix-terminal/**"
+      - ".github/workflows/mix-terminal.yml"
 
 jobs:
   run-mix-terminal:
@@ -42,12 +42,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
-
-      - name: Install dependencies
-        run: bun install
+        uses: ./.github/actions/setup-bun
 
       - name: Run MIX Terminal Script
         if: github.event_name == 'workflow_dispatch'

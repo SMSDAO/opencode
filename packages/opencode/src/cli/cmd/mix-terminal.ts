@@ -3,9 +3,6 @@ import * as prompts from "@clack/prompts"
 import { UI } from "../ui"
 import { AutomatedScripts } from "../../mix-terminal/scripts/automated"
 
-// Script execution delay in milliseconds
-const SCRIPT_EXECUTION_DELAY = 1000
-
 export const MixTerminalCommand = cmd({
   command: "mix-terminal",
   describe: "MIX Terminal - Integrated terminal with SmartBrain and SolanaRemix",
@@ -111,7 +108,7 @@ export const MixTerminalScriptCommand = cmd({
 
           try {
             const result = await AutomatedScripts.executeScript(args.name as string)
-            
+
             if (result.success) {
               spinner.stop("Script executed successfully")
               prompts.log.success(result.output)
