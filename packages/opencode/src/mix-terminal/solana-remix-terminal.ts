@@ -34,7 +34,7 @@ export namespace SolanaRemixTerminal {
    */
   export async function initialize(config: Config): Promise<Response> {
     console.log("[SolanaRemix/Terminal] Initializing with config:", config)
-    
+
     return {
       success: true,
       data: {
@@ -50,7 +50,7 @@ export namespace SolanaRemixTerminal {
    */
   export async function executeCommand(command: Command): Promise<CommandResult> {
     console.log("[SolanaRemix/Terminal] Executing command:", command)
-    
+
     return {
       success: true,
       output: `Command '${command.name}' executed successfully`,
@@ -70,7 +70,7 @@ export namespace SolanaRemixTerminal {
    */
   export function clear(): Response {
     console.log("[SolanaRemix/Terminal] Clearing terminal")
-    
+
     return {
       success: true,
       data: {
@@ -97,7 +97,7 @@ export namespace SolanaRemixTerminal {
    */
   export async function shutdown(): Promise<Response> {
     console.log("[SolanaRemix/Terminal] Shutting down")
-    
+
     return {
       success: true,
       data: {

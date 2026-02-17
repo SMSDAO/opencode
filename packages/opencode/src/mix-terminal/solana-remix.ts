@@ -26,7 +26,7 @@ export namespace SolanaRemix {
    */
   export async function initialize(config: Config): Promise<Response> {
     console.log("[SolanaRemix] Initializing with config:", config)
-    
+
     return {
       success: true,
       data: {
@@ -42,7 +42,7 @@ export namespace SolanaRemix {
    */
   export async function connect(network: string): Promise<Response> {
     console.log("[SolanaRemix] Connecting to network:", network)
-    
+
     return {
       success: true,
       data: {
@@ -74,7 +74,7 @@ export namespace SolanaRemix {
    */
   export async function deployProgram(programPath: string): Promise<Response> {
     console.log("[SolanaRemix] Deploying program:", programPath)
-    
+
     return {
       success: true,
       data: {
@@ -103,7 +103,7 @@ export namespace SolanaRemix {
    */
   export async function shutdown(): Promise<Response> {
     console.log("[SolanaRemix] Shutting down")
-    
+
     return {
       success: true,
       data: {

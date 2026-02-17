@@ -5,14 +5,18 @@ MIX Terminal is an advanced terminal feature for OpenCode that integrates multip
 ## Components
 
 ### 1. @SmartBrain
+
 AI-powered intelligence and decision-making capabilities that provide:
+
 - Code analysis and suggestions
 - Automated task execution
 - Intelligent error detection and resolution
 - Context-aware recommendations
 
 ### 2. @SolanaRemix
+
 Solana blockchain development and remix capabilities including:
+
 - Wallet management
 - Transaction handling
 - Smart contract deployment
@@ -20,7 +24,9 @@ Solana blockchain development and remix capabilities including:
 - Network connectivity (mainnet, testnet, devnet)
 
 ### 3. @SolanaRemix/terminal
+
 Enhanced terminal interface with:
+
 - Command execution
 - Command history
 - Autocomplete functionality
@@ -55,6 +61,7 @@ opencode mix-terminal config
 ```
 
 Or edit the configuration file directly:
+
 ```
 packages/opencode/config/mix-terminal.yml
 ```
@@ -64,11 +71,13 @@ packages/opencode/config/mix-terminal.yml
 MIX Terminal includes advanced automated scripts for common workflows:
 
 #### List Available Scripts
+
 ```bash
 opencode mix-terminal script list
 ```
 
 #### Run a Script
+
 ```bash
 # Initialize SmartBrain
 opencode mix-terminal script run smartbrain-init
@@ -111,6 +120,7 @@ MIX Terminal includes GitHub Actions workflow automation:
 - Environment-specific configurations
 
 To trigger the workflow manually:
+
 1. Go to Actions tab in GitHub
 2. Select "MIX Terminal Automation"
 3. Click "Run workflow"
@@ -134,7 +144,7 @@ mix-terminal/
 ### MixTerminal
 
 ```typescript
-import { MixTerminal } from './mix-terminal'
+import { MixTerminal } from "./mix-terminal"
 
 // Initialize all components
 await MixTerminal.initialize(config)
@@ -152,13 +162,13 @@ const config = MixTerminal.getDefaultConfig()
 ### SmartBrain
 
 ```typescript
-import { SmartBrain } from './mix-terminal'
+import { SmartBrain } from "./mix-terminal"
 
 // Initialize
 await SmartBrain.initialize({ enabled: true })
 
 // Process command
-await SmartBrain.process('command', context)
+await SmartBrain.process("command", context)
 
 // Get status
 SmartBrain.getStatus()
@@ -167,31 +177,31 @@ SmartBrain.getStatus()
 ### SolanaRemix
 
 ```typescript
-import { SolanaRemix } from './mix-terminal'
+import { SolanaRemix } from "./mix-terminal"
 
 // Initialize
-await SolanaRemix.initialize({ enabled: true, network: 'devnet' })
+await SolanaRemix.initialize({ enabled: true, network: "devnet" })
 
 // Connect to network
-await SolanaRemix.connect('devnet')
+await SolanaRemix.connect("devnet")
 
 // Get wallet
 await SolanaRemix.getWallet()
 
 // Deploy program
-await SolanaRemix.deployProgram('path/to/program')
+await SolanaRemix.deployProgram("path/to/program")
 ```
 
 ### SolanaRemixTerminal
 
 ```typescript
-import { SolanaRemixTerminal } from './mix-terminal'
+import { SolanaRemixTerminal } from "./mix-terminal"
 
 // Initialize
-await SolanaRemixTerminal.initialize({ enabled: true, theme: 'dark' })
+await SolanaRemixTerminal.initialize({ enabled: true, theme: "dark" })
 
 // Execute command
-await SolanaRemixTerminal.executeCommand({ name: 'ls', args: ['-la'] })
+await SolanaRemixTerminal.executeCommand({ name: "ls", args: ["-la"] })
 
 // Get history
 SolanaRemixTerminal.getHistory()

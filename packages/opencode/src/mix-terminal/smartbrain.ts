@@ -27,7 +27,7 @@ export namespace SmartBrain {
    */
   export async function initialize(config: Config): Promise<Response> {
     console.log("[SmartBrain] Initializing with config:", config)
-    
+
     return {
       success: true,
       data: {
@@ -42,7 +42,7 @@ export namespace SmartBrain {
    */
   export async function process(command: string, context: Context): Promise<Response> {
     console.log("[SmartBrain] Processing command:", command)
-    
+
     return {
       success: true,
       data: {
@@ -71,7 +71,7 @@ export namespace SmartBrain {
    */
   export async function shutdown(): Promise<Response> {
     console.log("[SmartBrain] Shutting down")
-    
+
     return {
       success: true,
       data: {

@@ -5,7 +5,7 @@ describe("MIX Terminal", () => {
   describe("MixTerminal Integration", () => {
     test("should get default configuration", () => {
       const config = MixTerminal.getDefaultConfig()
-      
+
       expect(config).toBeDefined()
       expect(config.smartbrain).toBeDefined()
       expect(config.solanaRemix).toBeDefined()
@@ -15,7 +15,7 @@ describe("MIX Terminal", () => {
     test("should initialize all components", async () => {
       const config = MixTerminal.getDefaultConfig()
       await MixTerminal.initialize(config)
-      
+
       const status = MixTerminal.getStatus()
       expect(status.initialized).toBe(true)
       expect(status.components.smartbrain).toBe(true)
@@ -27,7 +27,7 @@ describe("MIX Terminal", () => {
       const config = MixTerminal.getDefaultConfig()
       await MixTerminal.initialize(config)
       await MixTerminal.shutdown()
-      
+
       const status = MixTerminal.getStatus()
       expect(status.initialized).toBe(false)
     })
@@ -39,7 +39,7 @@ describe("MIX Terminal", () => {
         enabled: true,
         features: ["analysis"],
       })
-      
+
       expect(result.success).toBe(true)
       expect(result.data).toBeDefined()
     })
@@ -49,7 +49,7 @@ describe("MIX Terminal", () => {
         sessionId: "test",
         timestamp: Date.now(),
       })
-      
+
       expect(result.success).toBe(true)
     })
 
@@ -66,7 +66,7 @@ describe("MIX Terminal", () => {
         enabled: true,
         network: "devnet",
       })
-      
+
       expect(result.success).toBe(true)
       expect(result.data).toBeDefined()
     })
@@ -88,7 +88,7 @@ describe("MIX Terminal", () => {
         enabled: true,
         theme: "dark",
       })
-      
+
       expect(result.success).toBe(true)
       expect(result.data).toBeDefined()
     })
@@ -97,7 +97,7 @@ describe("MIX Terminal", () => {
       const result = await SolanaRemixTerminal.executeCommand({
         name: "test",
       })
-      
+
       expect(result.success).toBe(true)
       expect(result.exitCode).toBe(0)
     })
