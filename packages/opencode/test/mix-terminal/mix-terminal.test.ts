@@ -1,7 +1,16 @@
-import { describe, test, expect } from "bun:test"
+import { describe, test, expect, beforeEach, afterEach } from "bun:test"
 import { MixTerminal, SmartBrain, SolanaRemix, SolanaRemixTerminal } from "../../src/mix-terminal"
 
 describe("MIX Terminal", () => {
+  // Reset state before and after each test to avoid test pollution
+  beforeEach(async () => {
+    await MixTerminal.shutdown()
+  })
+
+  afterEach(async () => {
+    await MixTerminal.shutdown()
+  })
+
   describe("MixTerminal Integration", () => {
     test("should get default configuration", () => {
       const config = MixTerminal.getDefaultConfig()

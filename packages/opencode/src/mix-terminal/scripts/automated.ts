@@ -108,21 +108,45 @@ export namespace AutomatedScripts {
 
     const status = MixTerminal.getStatus()
 
-    if (!status.initialized) {
-      return {
-        success: false,
-        output: "",
-        error: "Failed to initialize all components",
+    // Check that all enabled components are actually initialized
+    const enabledComponents = []
+    const failedComponents = []
+
+    if (config.smartbrain.enabled) {
+      if (status.components.smartbrain) {
+        enabledComponents.push("smartbrain")
+      } else {
+        failedComponents.push("smartbrain")
       }
     }
 
-    const components = Object.entries(status.components)
-      .filter(([, enabled]) => enabled)
-      .map(([name]) => name)
+    if (config.solanaRemix.enabled) {
+      if (status.components.solanaRemix) {
+        enabledComponents.push("solanaRemix")
+      } else {
+        failedComponents.push("solanaRemix")
+      }
+    }
+
+    if (config.terminal.enabled) {
+      if (status.components.terminal) {
+        enabledComponents.push("terminal")
+      } else {
+        failedComponents.push("terminal")
+      }
+    }
+
+    if (failedComponents.length > 0) {
+      return {
+        success: false,
+        output: "",
+        error: `Failed to initialize enabled components: ${failedComponents.join(", ")}`,
+      }
+    }
 
     return {
       success: true,
-      output: `Full integration complete. Active components: ${components.join(", ")}`,
+      output: `Full integration complete. Active components: ${enabledComponents.join(", ")}`,
     }
   }
 

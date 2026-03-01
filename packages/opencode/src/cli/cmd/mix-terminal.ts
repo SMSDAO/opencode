@@ -2,6 +2,7 @@ import { cmd } from "./cmd"
 import * as prompts from "@clack/prompts"
 import { UI } from "../ui"
 import { AutomatedScripts } from "../../mix-terminal/scripts/automated"
+import { MixTerminal } from "../../mix-terminal"
 
 export const MixTerminalCommand = cmd({
   command: "mix-terminal",
@@ -42,22 +43,58 @@ export const MixTerminalStartCommand = cmd({
     const spinner = prompts.spinner()
     spinner.start("Initializing MIX Terminal components...")
 
-    const components = []
-    if (args.smartbrain) {
-      components.push("@SmartBrain")
-    }
-    if (args.solanaRemix) {
-      components.push("@SolanaRemix")
-    }
-    if (args.terminal) {
-      components.push("@SolanaRemix/terminal")
-    }
+    try {
+      // Build configuration from command-line flags
+      const config: MixTerminal.Config = {
+        smartbrain: {
+          enabled: args.smartbrain,
+          features: ["analysis", "suggestions", "automation"],
+        },
+        solanaRemix: {
+          enabled: args.solanaRemix,
+          network: "devnet",
+        },
+        terminal: {
+          enabled: args.terminal,
+          theme: "dark",
+          features: ["command-execution", "history", "autocomplete"],
+        },
+      }
 
-    spinner.stop(`MIX Terminal started with: ${components.join(", ")}`)
+      // Actually initialize the components
+      await MixTerminal.initialize(config)
 
-    prompts.log.success("All components initialized successfully")
-    prompts.log.info("Use 'opencode mix-terminal script run' to execute automated scripts")
-    prompts.outro("MIX Terminal is ready! 🎉")
+      const status = MixTerminal.getStatus()
+
+      if (!status.initialized) {
+        spinner.stop("Failed to initialize some components")
+        prompts.log.error("One or more components failed to initialize")
+        prompts.outro("MIX Terminal initialization incomplete")
+        process.exit(1)
+      }
+
+      const components = []
+      if (status.components.smartbrain) {
+        components.push("@SmartBrain")
+      }
+      if (status.components.solanaRemix) {
+        components.push("@SolanaRemix")
+      }
+      if (status.components.terminal) {
+        components.push("@SolanaRemix/terminal")
+      }
+
+      spinner.stop(`MIX Terminal started with: ${components.join(", ")}`)
+
+      prompts.log.success("All components initialized successfully")
+      prompts.log.info("Use 'opencode mix-terminal script run' to execute automated scripts")
+      prompts.outro("MIX Terminal is ready! 🎉")
+    } catch (error) {
+      spinner.stop("Initialization failed")
+      prompts.log.error(error instanceof Error ? error.message : "Unknown error")
+      prompts.outro("MIX Terminal failed to start")
+      process.exit(1)
+    }
   },
 })
 
