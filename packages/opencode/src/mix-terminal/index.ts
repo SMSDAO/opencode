@@ -86,7 +86,12 @@ export namespace MixTerminal {
    * Get current status of MIX Terminal
    */
   export function getStatus(): Status {
-    return { ...status }
+    return {
+      ...status,
+      components: {
+        ...status.components,
+      },
+    }
   }
 
   /**
