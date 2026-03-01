@@ -86,8 +86,8 @@ export const MixTerminalConfigCommand = cmd({
     })
     if (prompts.isCancel(terminalEnabled)) throw new UI.CancelledError()
 
-    prompts.log.success("Configuration saved successfully")
-    prompts.outro("MIX Terminal configuration complete")
+    prompts.log.success("Configuration choices recorded (not yet saved to a config file)")
+    prompts.outro("MIX Terminal configuration flow complete")
   },
 })
 
