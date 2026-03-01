@@ -131,11 +131,27 @@ export const MixTerminalScriptCommand = cmd({
           UI.empty()
           prompts.intro("Available MIX Terminal Scripts")
 
-          prompts.log.info("1. smartbrain-init - Initialize SmartBrain module")
-          prompts.log.info("2. solana-setup - Setup SolanaRemix environment")
-          prompts.log.info("3. terminal-config - Configure terminal settings")
-          prompts.log.info("4. full-integration - Run full component integration")
+          const scripts = await AutomatedScripts.listScripts()
 
+          if (!Array.isArray(scripts) || scripts.length === 0) {
+            prompts.log.info("No automated scripts are currently available.")
+          } else {
+            scripts.forEach((script: any, index: number) => {
+              let name: string
+              let description: string | undefined
+
+              if (typeof script === "string") {
+                name = script
+              } else {
+                name = script.name
+                description = script.description
+              }
+
+              const prefix = `${index + 1}. ${name}`
+              const line = description ? `${prefix} - ${description}` : prefix
+              prompts.log.info(line)
+            })
+          }
           prompts.outro("Use 'opencode mix-terminal script run <name>' to execute")
         },
       })
