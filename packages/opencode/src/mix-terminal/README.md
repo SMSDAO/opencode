@@ -2,6 +2,10 @@
 
 MIX Terminal is an advanced terminal feature for OpenCode that integrates multiple powerful components to provide a comprehensive development environment.
 
+## Overview
+
+![MIX Terminal Architecture](./screenshots/mix-terminal-architecture.svg)
+
 ## Components
 
 ### 1. @SmartBrain
@@ -41,6 +45,8 @@ MIX Terminal is built into OpenCode. No additional installation is required.
 
 ### Starting MIX Terminal
 
+![MIX Terminal Start Command](./screenshots/mix-terminal-start.svg)
+
 ```bash
 # Start with all components enabled (default)
 opencode mix-terminal start
@@ -53,6 +59,8 @@ opencode mix-terminal start --no-smartbrain
 ```
 
 ### Configuration
+
+![MIX Terminal Configuration](./screenshots/mix-terminal-config.svg)
 
 Configure MIX Terminal settings:
 
@@ -69,6 +77,8 @@ packages/opencode/config/mix-terminal.yml
 ### Automated Scripts
 
 MIX Terminal includes advanced automated scripts for common workflows:
+
+![MIX Terminal Script List](./screenshots/mix-terminal-script-list.svg)
 
 #### List Available Scripts
 

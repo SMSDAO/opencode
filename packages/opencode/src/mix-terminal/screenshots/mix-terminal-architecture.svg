@@ -1,0 +1,41 @@
+<svg width="1000" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1000" height="400" fill="#ffffff"/>
+  
+  <!-- Title -->
+  <text x="500" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e1e1e" text-anchor="middle">MIX Terminal Architecture</text>
+  
+  <!-- Main Box -->
+  <rect x="50" y="80" width="900" height="280" rx="8" fill="#f5f5f5" stroke="#3e3e3e" stroke-width="2"/>
+  <text x="500" y="110" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1e1e1e" text-anchor="middle">MIX Terminal</text>
+  
+  <!-- Component 1: SmartBrain -->
+  <rect x="80" y="140" width="250" height="180" rx="8" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
+  <text x="205" y="165" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1976d2" text-anchor="middle">@SmartBrain</text>
+  
+  <text x="95" y="195" font-family="Arial, sans-serif" font-size="13" fill="#424242">✓ AI Analysis</text>
+  <text x="95" y="220" font-family="Arial, sans-serif" font-size="13" fill="#424242">✓ Code Suggestions</text>
+  <text x="95" y="245" font-family="Arial, sans-serif" font-size="13" fill="#424242">✓ Automation</text>
+  <text x="95" y="270" font-family="Arial, sans-serif" font-size="13" fill="#424242">✓ Error Detection</text>
+  <text x="95" y="295" font-family="Arial, sans-serif" font-size="13" fill="#424242">✓ Context-aware Tips</text>
+  
+  <!-- Component 2: SolanaRemix -->
+  <rect x="375" y="140" width="250" height="180" rx="8" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2"/>
+  <text x="500" y="165" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#7b1fa2" text-anchor="middle">@SolanaRemix</text>
+  
+  <text x="390" y="195" font-family="Arial, sans-serif" font-size="13" fill="#424242">✓ Wallet Management</text>
+  <text x="390" y="220" font-family="Arial, sans-serif" font-size="13" fill="#424242">✓ Transactions</text>
+  <text x="390" y="245" font-family="Arial, sans-serif" font-size="13" fill="#424242">✓ Smart Contracts</text>
+  <text x="390" y="270" font-family="Arial, sans-serif" font-size="13" fill="#424242">✓ Token Operations</text>
+  <text x="390" y="295" font-family="Arial, sans-serif" font-size="13" fill="#424242">✓ Network Connect</text>
+  
+  <!-- Component 3: Terminal -->
+  <rect x="670" y="140" width="250" height="180" rx="8" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+  <text x="795" y="165" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#388e3c" text-anchor="middle">@SolanaRemix/terminal</text>
+  
+  <text x="685" y="195" font-family="Arial, sans-serif" font-size="13" fill="#424242">✓ Command Execution</text>
+  <text x="685" y="220" font-family="Arial, sans-serif" font-size="13" fill="#424242">✓ History Tracking</text>
+  <text x="685" y="245" font-family="Arial, sans-serif" font-size="13" fill="#424242">✓ Autocomplete</text>
+  <text x="685" y="270" font-family="Arial, sans-serif" font-size="13" fill="#424242">✓ Syntax Highlight</text>
+  <text x="685" y="295" font-family="Arial, sans-serif" font-size="13" fill="#424242">✓ Theme Support</text>
+</svg>
