@@ -40,15 +40,28 @@ export namespace SolanaRemix {
   /**
    * Connect to Solana network
    */
-  export async function connect(network: string): Promise<Response> {
-    console.log("[SolanaRemix] Connecting to network:", network)
+  const DEFAULT_RPC_ENDPOINTS: Record<NonNullable<Config["network"]>, string> = {
+    mainnet: "https://api.mainnet-beta.solana.com",
+    devnet: "https://api.devnet.solana.com",
+    testnet: "https://api.testnet.solana.com",
+  }
+
+  export async function connect(
+    network: Config["network"] = "devnet",
+    rpcUrl?: string
+  ): Promise<Response> {
+    const resolvedNetwork: NonNullable<Config["network"]> = network ?? "devnet"
+    const endpoint = rpcUrl || DEFAULT_RPC_ENDPOINTS[resolvedNetwork]
+
+    console.log("[SolanaRemix] Connecting to network:", resolvedNetwork)
+    console.log("[SolanaRemix] Using RPC endpoint:", endpoint)
 
     return {
       success: true,
       data: {
         connected: true,
-        network,
-        endpoint: `https://api.${network}.solana.com`,
+        network: resolvedNetwork,
+        endpoint,
       },
     }
   }
