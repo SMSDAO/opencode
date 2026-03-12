@@ -46,10 +46,7 @@ export namespace SolanaRemix {
     testnet: "https://api.testnet.solana.com",
   }
 
-  export async function connect(
-    network: Config["network"] = "devnet",
-    rpcUrl?: string
-  ): Promise<Response> {
+  export async function connect(network: Config["network"] = "devnet", rpcUrl?: string): Promise<Response> {
     const resolvedNetwork: NonNullable<Config["network"]> = network ?? "devnet"
     const endpoint = rpcUrl || DEFAULT_RPC_ENDPOINTS[resolvedNetwork]
 
