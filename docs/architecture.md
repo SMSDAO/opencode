@@ -52,16 +52,16 @@ function (serverless handlers)
 
 ## Key Technologies
 
-| Layer        | Technology                              |
-|--------------|-----------------------------------------|
-| Runtime      | Bun 1.3+                                |
-| Build        | Turborepo 2, Vite 7                     |
-| Core CLI     | TypeScript + Bun APIs                   |
-| Web app      | SolidStart + SolidJS + TailwindCSS v4   |
-| Docs site    | Astro + Starlight                       |
-| Infra        | SST v3 (AWS Lambda + Cloudflare R2/D1)  |
-| Auth         | OpenAuth JS (JWT + refresh tokens)      |
-| Storage      | AWS S3 or Cloudflare R2 (env-driven)    |
+| Layer     | Technology                             |
+| --------- | -------------------------------------- |
+| Runtime   | Bun 1.3+                               |
+| Build     | Turborepo 2, Vite 7                    |
+| Core CLI  | TypeScript + Bun APIs                  |
+| Web app   | SolidStart + SolidJS + TailwindCSS v4  |
+| Docs site | Astro + Starlight                      |
+| Infra     | SST v3 (AWS Lambda + Cloudflare R2/D1) |
+| Auth      | OpenAuth JS (JWT + refresh tokens)     |
+| Storage   | AWS S3 or Cloudflare R2 (env-driven)   |
 
 ## Enterprise Dashboard Architecture
 
@@ -88,19 +88,19 @@ src/routes/
 
 All enterprise UI components use a dark-mode-first design system defined in `src/components/enterprise.css`. Colours and effects are applied via plain CSS classes (no Tailwind utility sprawl in JSX). Key tokens:
 
-| Token    | Value                        | Usage                     |
-|----------|------------------------------|---------------------------|
-| Purple   | `#a78bfa` / `rgba(167,139,250,…)` | Primary accent, glows  |
-| Green    | `#34d399`                    | Success, health indicators|
-| Amber    | `#fbbf24`                    | Warnings                  |
-| Red      | `#f87171`                    | Errors, suspended state   |
-| Surface  | `rgba(255,255,255,0.03)`     | Card backgrounds          |
-| Border   | `rgba(255,255,255,0.07)`     | Card borders              |
+| Token   | Value                             | Usage                      |
+| ------- | --------------------------------- | -------------------------- |
+| Purple  | `#a78bfa` / `rgba(167,139,250,…)` | Primary accent, glows      |
+| Green   | `#34d399`                         | Success, health indicators |
+| Amber   | `#fbbf24`                         | Warnings                   |
+| Red     | `#f87171`                         | Errors, suspended state    |
+| Surface | `rgba(255,255,255,0.03)`          | Card backgrounds           |
+| Border  | `rgba(255,255,255,0.07)`          | Card borders               |
 
 ## RBAC Roles
 
 | Role      | Capabilities                                                |
-|-----------|-------------------------------------------------------------|
+| --------- | ----------------------------------------------------------- |
 | Admin     | Full access: user mgmt, role assignment, billing, audit log |
 | Developer | API logs, env management, deploy configs                    |
 | User      | Own dashboard, metered usage, account settings              |

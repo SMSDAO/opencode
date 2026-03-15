@@ -22,7 +22,9 @@ export default function DeveloperDashboardPage() {
         <div class="page-header">
           <div class="page-header__eyebrow">Developer Dashboard</div>
           <h1 class="page-header__title">Developer Tools</h1>
-          <p class="page-header__subtitle">Monitor APIs, inspect logs, manage environments, and diagnose deployments.</p>
+          <p class="page-header__subtitle">
+            Monitor APIs, inspect logs, manage environments, and diagnose deployments.
+          </p>
         </div>
 
         {/* API monitoring KPIs */}
@@ -138,17 +140,23 @@ export default function DeveloperDashboardPage() {
           <div class="grid grid--3">
             <div class="card">
               <div class="card__label">Auth Service</div>
-              <div class="card__value card__value--green" style="font-size:1.1rem;margin-top:0.25rem">Healthy</div>
+              <div class="card__value card__value--green" style="font-size:1.1rem;margin-top:0.25rem">
+                Healthy
+              </div>
               <div class="card__delta">Last check: 30s ago</div>
             </div>
             <div class="card">
               <div class="card__label">Storage Service</div>
-              <div class="card__value card__value--amber" style="font-size:1.1rem;margin-top:0.25rem">Degraded</div>
+              <div class="card__value card__value--amber" style="font-size:1.1rem;margin-top:0.25rem">
+                Degraded
+              </div>
               <div class="card__delta">Latency elevated: 412ms</div>
             </div>
             <div class="card">
               <div class="card__label">API Gateway</div>
-              <div class="card__value card__value--green" style="font-size:1.1rem;margin-top:0.25rem">Healthy</div>
+              <div class="card__value card__value--green" style="font-size:1.1rem;margin-top:0.25rem">
+                Healthy
+              </div>
               <div class="card__delta">Last check: 15s ago</div>
             </div>
           </div>

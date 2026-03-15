@@ -202,7 +202,9 @@ export default function AdminDashboardPage() {
           <div class="grid grid--2">
             <div class="card">
               <div class="card__label">Revenue (MRR)</div>
-              <div class="card__value card__value--purple" style="margin-top:0.25rem">$18,420</div>
+              <div class="card__value card__value--purple" style="margin-top:0.25rem">
+                $18,420
+              </div>
               <div class="card__delta card__delta--up">↑ 7% vs last month</div>
               <div style="margin-top:1rem">
                 <div class="meter">
@@ -236,7 +238,9 @@ export default function AdminDashboardPage() {
             </div>
             <div class="card">
               <div class="card__label">Platform Token Usage</div>
-              <div class="card__value" style="margin-top:0.25rem">142M <span style="font-size:0.875rem;font-weight:400;color:rgba(232,230,230,0.4)">tokens</span></div>
+              <div class="card__value" style="margin-top:0.25rem">
+                142M <span style="font-size:0.875rem;font-weight:400;color:rgba(232,230,230,0.4)">tokens</span>
+              </div>
               <div class="card__delta">of 500M monthly allocation</div>
               <div class="meter" style="margin-top:0.75rem">
                 <div class="meter__bar">
@@ -269,7 +273,9 @@ export default function AdminDashboardPage() {
             </div>
             <div class="card">
               <div class="card__label">Throughput</div>
-              <div class="card__value">2,840<span style="font-size:0.875rem;font-weight:400;color:rgba(232,230,230,0.4)">/min</span></div>
+              <div class="card__value">
+                2,840<span style="font-size:0.875rem;font-weight:400;color:rgba(232,230,230,0.4)">/min</span>
+              </div>
               <div class="card__delta card__delta--up">↑ 12% vs avg</div>
             </div>
           </div>

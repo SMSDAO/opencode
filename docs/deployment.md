@@ -68,6 +68,7 @@ sst remove --stage staging
 ```
 
 Infrastructure is defined in `infra/`:
+
 - `app.ts` — app-level resources
 - `enterprise.ts` — enterprise Cloudflare Worker + R2 bucket
 - `console.ts` — console web app
@@ -96,11 +97,11 @@ The enterprise app exposes a health endpoint at `GET /api/health` (routed via `s
 
 GitHub Actions workflows in `.github/workflows/`:
 
-| Workflow | Trigger | Purpose |
-|---|---|---|
-| `test.yml` | push / PR | Typecheck + unit tests + SDK check |
-| `typecheck.yml` | PR to dev | Standalone typecheck |
-| `publish.yml` | push to main | Publish npm packages |
-| `snapshot.yml` | manual | Publish canary snapshot |
-| `deploy.yml` | push to production | Deploy to cloud |
-| `format.yml` | PR | Check code formatting |
+| Workflow        | Trigger            | Purpose                            |
+| --------------- | ------------------ | ---------------------------------- |
+| `test.yml`      | push / PR          | Typecheck + unit tests + SDK check |
+| `typecheck.yml` | PR to dev          | Standalone typecheck               |
+| `publish.yml`   | push to main       | Publish npm packages               |
+| `snapshot.yml`  | manual             | Publish canary snapshot            |
+| `deploy.yml`    | push to production | Deploy to cloud                    |
+| `format.yml`    | PR                 | Check code formatting              |

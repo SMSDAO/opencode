@@ -7,8 +7,12 @@ export default function NotFound() {
     <div class="dashboard">
       <Nav />
       <main class="dashboard__main" style="text-align:center;padding-top:6rem">
-        <div class="page-header__eyebrow" style="display:inline-block">404</div>
-        <h1 class="page-header__title" style="font-size:3rem;margin:1rem 0">Page Not Found</h1>
+        <div class="page-header__eyebrow" style="display:inline-block">
+          404
+        </div>
+        <h1 class="page-header__title" style="font-size:3rem;margin:1rem 0">
+          Page Not Found
+        </h1>
         <p class="page-header__subtitle">The page you're looking for doesn't exist.</p>
         <div style="margin-top:2rem">
           <A
@@ -22,4 +26,3 @@ export default function NotFound() {
     </div>
   )
 }
-

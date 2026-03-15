@@ -7,6 +7,7 @@ Navigate to `/developer`. Users with the **Developer** or **Admin** role can vie
 ## API Monitoring
 
 The four KPI cards show:
+
 - **Requests (1h)** — total API requests in the last hour with vs-previous-hour delta.
 - **P50 Latency** — median response time; P99 shown as sub-metric.
 - **5xx Errors** — server error count in the last hour.
@@ -17,11 +18,12 @@ The four KPI cards show:
 The log viewer shows the most recent application log lines in a terminal-style panel.
 
 ### Log Levels
-| Level | Colour | Meaning |
-|---|---|---|
-| INFO | Blue | Normal operation |
-| WARN | Amber | Non-fatal issue requiring attention |
-| ERROR | Red | Error that may affect users |
+
+| Level | Colour | Meaning                             |
+| ----- | ------ | ----------------------------------- |
+| INFO  | Blue   | Normal operation                    |
+| WARN  | Amber  | Non-fatal issue requiring attention |
+| ERROR | Red    | Error that may affect users         |
 
 Full structured logs are available via the SST Console or your cloud provider's log service (CloudWatch / Cloudflare Logpush).
 
@@ -39,6 +41,7 @@ The environment variable table shows all known variables, their environment (pro
 ## Integration Testing Console
 
 Three health cards show the status of key internal services:
+
 - **Auth Service** — validates JWT signing / verification.
 - **Storage Service** — checks S3/R2 read/write latency.
 - **API Gateway** — end-to-end request routing check.
@@ -50,6 +53,7 @@ curl https://your-domain.com/api/health
 ```
 
 Expected response:
+
 ```json
 { "status": "ok", "uptime": 1234567 }
 ```
@@ -57,6 +61,7 @@ Expected response:
 ## Deployment Diagnostics
 
 The deployment table shows:
+
 - Service name
 - Target environment
 - Current deployed version
@@ -80,6 +85,7 @@ bun ./packages/sdk/js/script/build.ts
 ```
 
 The CI pipeline verifies that committed SDK artefacts are in sync with the spec:
+
 ```bash
 git diff --exit-code packages/sdk/js/src/gen packages/sdk/js/dist
 ```

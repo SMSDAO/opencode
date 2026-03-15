@@ -31,7 +31,9 @@ export default function DashboardPage() {
           </div>
           <div class="card">
             <div class="card__label">Active Since</div>
-            <div class="card__value" style="font-size:1.1rem">Mar 2024</div>
+            <div class="card__value" style="font-size:1.1rem">
+              Mar 2024
+            </div>
             <div class="card__delta">Pro plan</div>
           </div>
         </div>

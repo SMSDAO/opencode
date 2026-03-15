@@ -55,7 +55,9 @@
   font-weight: 500;
   color: rgba(232, 230, 230, 0.6);
   text-decoration: none;
-  transition: color 0.2s, background 0.2s;
+  transition:
+    color 0.2s,
+    background 0.2s;
   white-space: nowrap;
 }
 
@@ -151,7 +153,9 @@
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 10px;
   padding: 1.25rem;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .card:hover {
@@ -161,7 +165,9 @@
 
 .card--glow {
   border-color: rgba(167, 139, 250, 0.2);
-  box-shadow: 0 0 20px rgba(167, 139, 250, 0.08), inset 0 0 20px rgba(167, 139, 250, 0.03);
+  box-shadow:
+    0 0 20px rgba(167, 139, 250, 0.08),
+    inset 0 0 20px rgba(167, 139, 250, 0.03);
 }
 
 .card__label {
