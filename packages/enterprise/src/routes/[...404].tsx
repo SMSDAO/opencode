@@ -1,25 +1,27 @@
 import { A } from "@solidjs/router"
+import { Nav } from "~/components/nav"
 
 export default function NotFound() {
   return (
-    <main class="text-center mx-auto text-gray-700 p-4">
-      <h1 class="max-6-xs text-6xl text-sky-700 font-thin uppercase my-16">Not Found</h1>
-      <p class="mt-8">
-        Visit{" "}
-        <a href="https://solidjs.com" target="_blank" class="text-sky-600 hover:underline">
-          solidjs.com
-        </a>{" "}
-        to learn how to build Solid apps.
-      </p>
-      <p class="my-4">
-        <A href="/" class="text-sky-600 hover:underline">
-          Home
-        </A>
-        {" - "}
-        <A href="/about" class="text-sky-600 hover:underline">
-          About Page
-        </A>
-      </p>
-    </main>
+    <div class="dashboard">
+      <Nav />
+      <main class="dashboard__main" style="text-align:center;padding-top:6rem">
+        <div class="page-header__eyebrow" style="display:inline-block">
+          404
+        </div>
+        <h1 class="page-header__title" style="font-size:3rem;margin:1rem 0">
+          Page Not Found
+        </h1>
+        <p class="page-header__subtitle">The page you're looking for doesn't exist.</p>
+        <div style="margin-top:2rem">
+          <A
+            href="/"
+            style="font-size:0.9rem;color:#a78bfa;text-decoration:none;padding:0.625rem 1.25rem;border:1px solid rgba(167,139,250,0.3);border-radius:8px;display:inline-block"
+          >
+            ← Back to Home
+          </A>
+        </div>
+      </main>
+    </div>
   )
 }
