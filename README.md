@@ -138,6 +138,12 @@ The admin dashboard provides system-wide KPIs, user management with RBAC roles, 
 
 <img src="docs/assets/ui/admin-dashboard.png" alt="Admin Dashboard — system overview, user management, billing controls, audit log" width="100%" />
 
+### Developer Dashboard
+
+The developer dashboard provides API monitoring KPIs, a terminal-style live log viewer, environment variable management, integration health checks, and deployment diagnostics.
+
+<img src="docs/assets/ui/developer-dashboard.png" alt="Developer Dashboard — API monitoring, live logs, environment variables, integration health, deployments" width="100%" />
+
 ---
 
 **Join our community** [Discord](https://discord.gg/opencode) | [X.com](https://x.com/opencode)

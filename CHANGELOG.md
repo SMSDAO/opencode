@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Metered usage UI** — Token quota, API request, and storage meter bars for users and aggregate platform view for admins
 - **Billing controls** — Per-user billing summary and admin-level MRR / seat / overage controls
 - **RBAC role matrix** — Visual permission matrix for Admin, Developer, User, Auditor roles
-- **CHANGELOG.md** — This file; using Keep a Changelog format with semantic versioning
+- **Headless Playwright screenshots** — `docs/assets/ui/{user,admin,developer}-dashboard.png` (1280×900)
 - **`/docs` directory** — Architecture, deployment, environment variables, and user/admin/developer guides
 - **`/.env.example` update** — Added enterprise and auth environment variable templates
 - **Homepage route** (`/`) — Platform status overview and quick navigation cards
@@ -28,7 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `packages/enterprise/src/app.css` — Imports enterprise Neo-Glow component stylesheet (`./components/enterprise.css`) so all dashboard pages receive styles automatically
 - `packages/enterprise/src/routes/[...404].tsx` — Cleaned up default SolidJS placeholder text
-- `README.md` — Added UI Preview section with user-dashboard and admin-dashboard screenshots
+- `README.md` — Added UI Preview section with user-dashboard, admin-dashboard, and developer-dashboard screenshots
 
 ### Fixed
 
