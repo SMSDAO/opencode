@@ -122,4 +122,22 @@ The other confusingly named repo has no relation to this one. You can [read the 
 
 ---
 
+## UI Preview
+
+The enterprise dashboards provide a Neo-Glow dark-mode interface for managing users, billing, and platform observability.
+
+### User Dashboard
+
+The user dashboard shows account metrics, metered usage (tokens, API requests, storage), billing summary, recent activity, and notifications.
+
+<img src="docs/assets/ui/user-dashboard.png" alt="User Dashboard — account overview, metered usage, billing, activity, and notifications" width="100%" />
+
+### Admin Dashboard
+
+The admin dashboard provides system-wide KPIs, user management with RBAC roles, billing controls with seat and token metering, and a real-time audit log.
+
+<img src="docs/assets/ui/admin-dashboard.png" alt="Admin Dashboard — system overview, user management, billing controls, audit log" width="100%" />
+
+---
+
 **Join our community** [Discord](https://discord.gg/opencode) | [X.com](https://x.com/opencode)
