@@ -1,5 +1,4 @@
 import { Nav } from "~/components/nav"
-import "~/components/enterprise.css"
 
 export default function AdminDashboardPage() {
   return (

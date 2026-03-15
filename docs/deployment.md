@@ -97,11 +97,11 @@ The enterprise app exposes a health endpoint at `GET /api/health` (routed via `s
 
 GitHub Actions workflows in `.github/workflows/`:
 
-| Workflow        | Trigger            | Purpose                            |
-| --------------- | ------------------ | ---------------------------------- |
-| `test.yml`      | push / PR          | Typecheck + unit tests + SDK check |
-| `typecheck.yml` | PR to dev          | Standalone typecheck               |
-| `publish.yml`   | push to main       | Publish npm packages               |
-| `snapshot.yml`  | manual             | Publish canary snapshot            |
-| `deploy.yml`    | push to production | Deploy to cloud                    |
-| `format.yml`    | PR                 | Check code formatting              |
+| Workflow | Trigger | Purpose |
+|---|---|---|
+| `test.yml` | push (all except `production`) / PR / `workflow_dispatch` | Typecheck + unit tests + SDK sync check |
+| `typecheck.yml` | PR to `dev` / `workflow_dispatch` | Standalone typecheck |
+| `publish.yml` | `workflow_dispatch` (manual bump: major/minor/patch) | Publish npm packages and create release |
+| `snapshot.yml` | push to `dev`, `test-bedrock`, `v0`, `otui-diffs`, `snapshot-*` / `workflow_dispatch` | Publish canary snapshot |
+| `deploy.yml` | push to `dev` or `production` / `workflow_dispatch` | Deploy to cloud (SST) |
+| `format.yml` | push (all except `production`) / PR / `workflow_dispatch` | Check and apply code formatting |

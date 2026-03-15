@@ -26,7 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- `packages/enterprise/src/app.css` — Imports enterprise Neo-Glow component stylesheet
+- `packages/enterprise/src/app.css` — Imports enterprise Neo-Glow component stylesheet (`./components/enterprise.css`) so all dashboard pages receive styles automatically
 - `packages/enterprise/src/routes/[...404].tsx` — Cleaned up default SolidJS placeholder text
 - `README.md` — Added UI Preview section with user-dashboard and admin-dashboard screenshots
 

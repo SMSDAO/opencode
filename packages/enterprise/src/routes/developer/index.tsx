@@ -1,5 +1,4 @@
 import { Nav } from "~/components/nav"
-import "~/components/enterprise.css"
 
 const SAMPLE_LOGS = [
   { time: "01:24:55", level: "INFO", msg: "POST /api/completions 200 142ms" },
