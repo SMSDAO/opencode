@@ -12,7 +12,7 @@
   "dependencies": {
     "@actions/core": "1.11.1",
     "@actions/github": "8.0.1",
-    "@octokit/graphql": "9.0.1",
+    "@octokit/graphql": "9.0.3",
     "@octokit/rest": "22.0.0",
     "@opencode-ai/sdk": "workspace:*"
   }

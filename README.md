@@ -68,6 +68,30 @@ This is used internally and can be invoked using `@general` in messages.
 
 Learn more about [agents](https://opencode.ai/docs/agents).
 
+### MIX Terminal
+
+OpenCode now includes **MIX Terminal**, an advanced terminal feature that integrates:
+
+- **@SmartBrain** - AI-powered intelligence and decision-making
+- **@SolanaRemix** - Solana blockchain development capabilities
+- **@SolanaRemix/terminal** - Enhanced terminal interface
+
+#### Quick Start
+
+```bash
+# Start MIX Terminal with all components
+opencode mix-terminal start
+
+# Configure MIX Terminal
+opencode mix-terminal config
+
+# Run automated scripts
+opencode mix-terminal script list
+opencode mix-terminal script run smartbrain-init
+```
+
+Learn more in the [MIX Terminal documentation](packages/opencode/src/mix-terminal/README.md).
+
 ### Documentation
 
 For more info on how to configure OpenCode [**head over to our docs**](https://opencode.ai/docs).
